@@ -18,31 +18,34 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     display: flex;
-  }
-  .column {
-    flex: 1;
-    border-right: 1px solid #FFA500; /* Orange color */
-    padding: 20px;
-    display: flex;
     flex-direction: column;
   }
+  .columns {
+    display: flex;
+  }
+  .column {
+    border-right: 1px solid #FFA500; /* Orange color */
+    padding: 20px;
+    flex: 1;
+  }
   .column:last-child {
-    border-right: none;
+    border-bottom: none;
   }
   .photo img {
     width: 100%;
-    border-radius: 45%;
+    border-radius: 50%;
   }
   .details {
-    flex: 2;
     padding: 0 20px;
   }
   .additional-info {
-    flex: 1;
     max-width: 200px;
   }
   .personal-info h2 {
     margin-top: 0;
+  }
+  .personal-info-top{
+    display:none;
   }
   .skills,
   .tools {
@@ -55,167 +58,230 @@
   .experience {
     margin-top: 20px;
   }
+  @media screen and (max-width: 600px) {
+    .container {
+      max-width: 100%; /* Full width for small screens */
+    }
+    .columns {
+      flex-direction: column; /* Switch to one column for small screens */
+    }
+    .column {
+      border-bottom: 1px solid #FFA500;
+      border-right: none;
+      flex: none; /* Disable flex for one column */
+      padding: 2px 2px 5px 10px;
+    }
+    .additional-info {
+      max-width:354px;
+    }
+    .personal-info-top{
+      display:block;
+    }
+    .personal-info{
+      display:none;
+    }
+    .photo{
+      width: 50%;
+      padding-left: 25%;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .container {
+      max-width: 100%; /* Full width for small screens */
+    }
+    .columns {
+      flex-direction: column; /* Switch to one column for small screens */
+    }
+    .column {
+      border-bottom: 1px solid #FFA500;
+      border-right: none;
+      flex: none; /* Disable flex for one column */
+      padding: 2px 2px 5px 10px;
+    }
+    .additional-info {
+      max-width:354px;
+    }
+    .personal-info-top{
+      display:block;
+    }
+    .personal-info{
+      display:none;
+    }
+    .photo{
+      width: 50%;
+      padding-left: 25%;
+    }
+  }
 </style>
 </head>
 <body>
   <div class="container">
-    <div class="column additional-info">
-      <div class="photo">
-        <img src="https://habrastorage.org/webt/-a/md/45/-amd45qkqyq5oola7oywzj5ukue.jpeg" alt="Your Photo">
-      </div>
-      <div class="skills">
-        <h2>Skills</h2>
-        <ul>
-          <li>API Testing</li>
-          <li>Test Case Design</li>
-          <li>Bug Tracking and Reporting</li>
-          <li>Test Planning</li>
-          <li>Test Data Management</li>
-          <li>Agile/Scrum</li>
-          <li>Defect Management</li>
-          <li>Test Documentation</li>
-          <li>Problem-Solving</li>
-          <li>Regression Testing</li>
-          <li>Test Automation</li>
-          <!-- Add more skills here -->
-        </ul>
-      </div>
-      <div class="tools">
-        <h2>Tools</h2>
-        <ul>
-          <li>Postman, SoapUI, REST, SOAP, Git, Visual Code, Moсkoon, PL\SQL Developer, </li>
-          <li>Platformico, Gravitee, XML, YAML, OAuth 2.0, TFS, python, pytest, allure, Java, JUnit</li>
-          <!-- <li>Tool 2</li> -->
-          <!-- <li>Tool 3</li> -->
-          <!-- Add more tools here -->
-        </ul>
-      </div>
-      <div class="tools">
-        <h2>Other technologies<br>(tags)</h2>
-        <ul>
-          <li>AD, DNS, DHCP, Windows XP, Windows 7, PowerShell ISE 3.0, Amazon S3, Amazon route 53, Yandex: Direct, Gitlab, OTRS, Selenium, UNIX, network management, ITIL, OTRS, Junit 4, Oracle DB, Putty, OpenSSL, REST/SOAP protocol</li>
-          <!-- <li>Tool 2</li> -->
-          <!-- <li>Tool 3</li> -->
-          <!-- Add more tools here -->
-        </ul>
-      </div>
-    </div>
-    <div class="column">
-      <div class="details">
-        <div class="personal-info">
+    <div class="columns">
+      <div class="column additional-info">
+        <div class="personal-info-top">
           <h2>Botsyun Sergey</h2>
           <p>Email: sbotsyun@gmail.com</p>
           <p>Phone: +374 55 426 904</p>
           <p>Location: Dilijan, Armenia</p>
-	<details>
-  <summary>More about me...</summary>
-  <p>With the background of bachelor's degree in IT for banking sector, my experience started with the role of serve
-desk consultant for a bank, and through 14 years of experience lead me to the position of the Head of Technical
-Support Department.<br>
-Currently I am a QA Engineer with 3 year-experience in software testing and QA, with the main focus on testing
-backend integrations for financial products, e.g. banking, insurance and fin-tech projects.
-I’m confident I could be useful to your company in resolving a variety of issues including improving the quality
-of business process and processes of development in payments, ERP and etc, with lots of transactions and
-integrations with other systems. And I can help you make your customer's API more efficient, more flexible and
-faster.</p>
-</details>
         </div>
-        <div class="experience">
-          <h2>Experience</h2>
-          <h3>Software QA Test Engineer - Ingosstrakh Insurance company</h3>
-          <p>08.2021 - This time</p>
-          <p>Main achievements:<br>
-Project "maintenance a new codeless business system"
-Took an active part in creating a full process of refactoring the old monolith gateway system and
-developing the new API. Was part of discussions about the Kanban board type, the best methods of
-communication between team members in Agile environment. Proved strong communication skills in
-facilitating conflict solving in the team - among managers, BA and software developers;
-Responsibilities:<br>
-- As the only QA engineer in the team, provided strong quality assurance from release to release;<br>
-- Performed functional, exploratory, regression testing using different tools. Analyzed logs and DB
-requests to improve the testing process.<br>
-- Was part of the internal project that created REST API for different internal and external systems
-within the company;<br>
-- Test design activities: creating test-plan, API testing collections (Postman, SoapUI), test-cases in TFS;<br>
-- python scripts and framework for test API and generate test data.<br><br>
-Project "an appointment of personal managers"<br>
-- shift-left testing;<br>
-- take part of the "3 Amigo meetings for analyze and prepare user stories for developing and testing";<br>
-- write tests for the following automation by developers</p>
+        <div class="photo">
+          <img src="https://habrastorage.org/webt/-a/md/45/-amd45qkqyq5oola7oywzj5ukue.jpeg" alt="Your Photo">
         </div>
-	
-	<div class="experience">
-          <h3>Software Test Engineer - Perfomance lab</h3>
-          <p>02.2020 - 08.2021 (1 year 7 months)</p>
-          <p><b>Main achievements:</b><br>
-	<p>Was part of the internal project of an anti-fraud system implementation for a bank.
-Conducted coaching of junior testers joining the team. Created project’s Knowledge Base.<br>
-Responsibilities:<br>
-- Evaluated new business requirements, defined use cases, and maintained a local testing environment;<br>
-- Created testing plans based on business requirements and technical documentation;<br>
-- Kept track of deadlines of releases by ensuring the timely completion of tasks</p>
-	<p><b>Tools:</b> Java IDE, Powershell, Python, Selenium, Junit 4, Oracle DB, Putty, OpenSSL,
-REST/SOAP protocols</p>
+        <div class="skills">
+          <h2>Skills</h2>
+          <ul>
+            <li>API Testing</li>
+            <li>Test Case Design</li>
+            <li>Bug Tracking and Reporting</li>
+            <li>Test Planning</li>
+            <li>Test Data Management</li>
+            <li>Agile/Scrum</li>
+            <li>Defect Management</li>
+            <li>Test Documentation</li>
+            <li>Problem-Solving</li>
+            <li>Regression Testing</li>
+            <li>Test Automation</li>
+            <!-- Add more skills here -->
+          </ul>
         </div>
-<div class="experience">
-          <h3>Support and Testing Specialist for Information Systems - Rusnarbank</h3>
-          <p>05.2018 - 12.2019</p>
-          <p><b>Main achievements:</b><br>
-	<p>Working with an information system that provides banking services in the field of government procurement portal operations. Understanding of business processes related to the sale of bank guarantees under laws 44-FZ and 220-FZ, as well as cash management.<br>
-Responsibilities:<br>
-<li>Preparation of test cases and checklists.</li>
-<details>
-  <summary>More about this project...</summary>
-<li>Execution of manual functional testing (critical path testing, smoke testing).</li>
-<li>Conducting regression testing.</li>
-<li>Negative testing of front-end.</li>
-<li>Preparation of test data sets.</li>
-<li>Compiling bug reports from OTRS based on user requests.</li>
-<li>Bug tracking in Gitlab system.</li>
-<li>Preparation of reports.</li>
-<li>Testing back-end, APIs (Postman).</li>
-<li>Cross-browser testing of front-end.</li>
-	<p><b>Skills and Tools:</b> 
-<li>Working with GIT.</li>
-<li>Writing Selenium automated tests in Python.</li>
-<li>Writing PHP scripts.</li>
-<li>Writing SQL queries (including working with phpMyAdmin).</li>
-<li>Working with Linux bash.</li>
-<li>Knowledge of HTML, CSS, JavaScript.</li>
-<li>Working with Chrome developer tools.</li>
-<li>API testing using Postman.</li>
-<li>Using GitHub, Bitbucket.</li>
-<li>Using GitLab.</li>
-<li>Skills in using Docker.</li>
-<li>Working in Scrum sprints.</li></p>
-</details>
+        <div class="tools">
+          <h2>Tools</h2>
+          <ul>
+            <li>Postman, SoapUI, REST, SOAP, Git, Visual Code, Moсkoon, PL\SQL Developer, </li>
+            <li>Platformico, Gravitee, XML, YAML, OAuth 2.0, TFS, python, pytest, allure, Java, JUnit</li>
+            <!-- <li>Tool 2</li> -->
+            <!-- <li>Tool 3</li> -->
+            <!-- Add more tools here -->
+          </ul>
         </div>
-        <!-- Add more sections for education, projects, etc. -->
+        <div class="tools">
+          <h2>Other technologies<br>(tags)</h2>
+          <ul>
+            <li>AD, DNS, DHCP, Windows XP, Windows 7, PowerShell ISE 3.0, Amazon S3, Amazon route 53, Yandex: Direct, Gitlab, OTRS, Selenium, UNIX, network management, ITIL, OTRS, Junit 4, Oracle DB, Putty, OpenSSL, REST/SOAP protocol</li>
+            <!-- <li>Tool 2</li> -->
+            <!-- <li>Tool 3</li> -->
+            <!-- Add more tools here -->
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="column additional-info">
-	<div class="details">
-        <div class="Articles">
-          <h2>Articles<br></h2>
-          <p>(in Russian)</p>
-          <p style="font-size:14px;"><a href="https://habr.com/ru/articles/568360/">Test strategy for the REST API</a></p>
-	        <p style="font-size:14px;"><a href="https://habr.com/ru/articles/595379/">Manual integration testing in the banking sector. What is inside?</a></p>
-          <p style="font-size:14px;"><a href="https://habr.com/ru/companies/ingos_it/articles/670730/">Best practies in API testing</a></p>
-          <p style="font-size:14px;"><a href="https://habr.com/ru/articles/345696/">Calculating stock rate of return and total return using Moex API and dividend parser</a></p>
-          <p style="font-size:14px;"><a href="https://habr.com/ru/articles/343688/">Implementation of the simplest investment strategy based on the MOEX (Moscow Exchange) API</a></p>
-          <p></p>
-          <p></p>
+      <div class="column">
+        <div class="details">
+          <div class="personal-info">
+            <h2>Botsyun Sergey</h2>
+            <p>Email: sbotsyun@gmail.com</p>
+            <p>Phone: +374 55 426 904</p>
+            <p>Location: Dilijan, Armenia</p>
+  	<details>
+    <summary>More about me...</summary>
+    <p>With the background of bachelor's degree in IT for banking sector, my experience started with the role of serve
+  desk consultant for a bank, and through 14 years of experience lead me to the position of the Head of Technical
+  Support Department.<br>
+  Currently I am a QA Engineer with 3 year-experience in software testing and QA, with the main focus on testing
+  backend integrations for financial products, e.g. banking, insurance and fin-tech projects.
+  I’m confident I could be useful to your company in resolving a variety of issues including improving the quality
+  of business process and processes of development in payments, ERP and etc, with lots of transactions and
+  integrations with other systems. And I can help you make your customer's API more efficient, more flexible and
+  faster.</p>
+  </details>
+          </div>
+          <div class="experience">
+            <h2>Experience</h2>
+            <h3>Software QA Test Engineer - Ingosstrakh Insurance company</h3>
+            <p>08.2021 - This time</p>
+            <p>Main achievements:<br>
+  Project "maintenance a new codeless business system"
+  Took an active part in creating a full process of refactoring the old monolith gateway system and
+  developing the new API. Was part of discussions about the Kanban board type, the best methods of
+  communication between team members in Agile environment. Proved strong communication skills in
+  facilitating conflict solving in the team - among managers, BA and software developers;
+  Responsibilities:<br>
+  - As the only QA engineer in the team, provided strong quality assurance from release to release;<br>
+  - Performed functional, exploratory, regression testing using different tools. Analyzed logs and DB
+  requests to improve the testing process.<br>
+  - Was part of the internal project that created REST API for different internal and external systems
+  within the company;<br>
+  - Test design activities: creating test-plan, API testing collections (Postman, SoapUI), test-cases in TFS;<br>
+  - python scripts and framework for test API and generate test data.<br><br>
+  Project "an appointment of personal managers"<br>
+  - shift-left testing;<br>
+  - take part of the "3 Amigo meetings for analyze and prepare user stories for developing and testing";<br>
+  - write tests for the following automation by developers</p>
+          </div>
+
+  	<div class="experience">
+            <h3>Software Test Engineer - Perfomance lab</h3>
+            <p>02.2020 - 08.2021 (1 year 7 months)</p>
+            <p><b>Main achievements:</b><br>
+  	<p>Was part of the internal project of an anti-fraud system implementation for a bank.
+  Conducted coaching of junior testers joining the team. Created project’s Knowledge Base.<br>
+  Responsibilities:<br>
+  - Evaluated new business requirements, defined use cases, and maintained a local testing environment;<br>
+  - Created testing plans based on business requirements and technical documentation;<br>
+  - Kept track of deadlines of releases by ensuring the timely completion of tasks</p>
+  	<p><b>Tools:</b> Java IDE, Powershell, Python, Selenium, Junit 4, Oracle DB, Putty, OpenSSL,
+  REST/SOAP protocols</p>
+          </div>
+  <div class="experience">
+            <h3>Support and Testing Specialist for Information Systems - Rusnarbank</h3>
+            <p>05.2018 - 12.2019</p>
+            <p><b>Main achievements:</b><br>
+  	<p>Working with an information system that provides banking services in the field of government procurement portal operations. Understanding of business processes related to the sale of bank guarantees under laws 44-FZ and 220-FZ, as well as cash management.<br>
+  Responsibilities:<br>
+  <li>Preparation of test cases and checklists.</li>
+  <details>
+    <summary>More about this project...</summary>
+  <li>Execution of manual functional testing (critical path testing, smoke testing).</li>
+  <li>Conducting regression testing.</li>
+  <li>Negative testing of front-end.</li>
+  <li>Preparation of test data sets.</li>
+  <li>Compiling bug reports from OTRS based on user requests.</li>
+  <li>Bug tracking in Gitlab system.</li>
+  <li>Preparation of reports.</li>
+  <li>Testing back-end, APIs (Postman).</li>
+  <li>Cross-browser testing of front-end.</li>
+  	<p><b>Skills and Tools:</b>
+  <li>Working with GIT.</li>
+  <li>Writing Selenium automated tests in Python.</li>
+  <li>Writing PHP scripts.</li>
+  <li>Writing SQL queries (including working with phpMyAdmin).</li>
+  <li>Working with Linux bash.</li>
+  <li>Knowledge of HTML, CSS, JavaScript.</li>
+  <li>Working with Chrome developer tools.</li>
+  <li>API testing using Postman.</li>
+  <li>Using GitHub, Bitbucket.</li>
+  <li>Using GitLab.</li>
+  <li>Skills in using Docker.</li>
+  <li>Working in Scrum sprints.</li></p>
+  </details>
+          </div>
+          <!-- Add more sections for education, projects, etc. -->
         </div>
-        <div class="Repositories">
-          <h3>Repos</h3>
-          <h3></h3>
-          <p style="font-size:14px;"><a href="https://github.com/jeisooo/smart_lab_playwrite">Java automation framework for smart-lab.ru</a></p>
-	        <p style="font-size:14px;"><a href="https://bitbucket.org/jeisooo/portfolio_bot_public">Python Portfolio assets screener</a></p>
-          <p></p>
-        </div>
-      <!-- Additional information goes here -->
-    </div>
+      </div>
+      <div class="column additional-info">
+        <div class="details">
+              <div class="Articles">
+                <h2>Articles<br></h2>
+                <p>(in Russian)</p>
+                <p style="font-size:14px;"><a href="https://habr.com/ru/articles/568360/">Test strategy for the REST API</a></p>
+      	        <p style="font-size:14px;"><a href="https://habr.com/ru/articles/595379/">Manual integration testing in the banking sector. What is inside?</a></p>
+                <p style="font-size:14px;"><a href="https://habr.com/ru/companies/ingos_it/articles/670730/">Best practies in API testing</a></p>
+                <p style="font-size:14px;"><a href="https://habr.com/ru/articles/345696/">Calculating stock rate of return and total return using Moex API and dividend parser</a></p>
+                <p style="font-size:14px;"><a href="https://habr.com/ru/articles/343688/">Implementation of the simplest investment strategy based on the MOEX (Moscow Exchange) API</a></p>
+                <p></p>
+                <p></p>
+              </div>
+              <div class="Repositories">
+                <h3>Repos</h3>
+                <h3></h3>
+                <p style="font-size:14px;"><a href="https://github.com/jeisooo/smart_lab_playwrite">Java automation framework for smart-lab.ru</a></p>
+      	        <p style="font-size:14px;"><a href="https://bitbucket.org/jeisooo/portfolio_bot_public">Python Portfolio assets screener</a></p>
+                <p></p>
+              </div>
+            <!-- Additional information goes here -->
+          </div>
+      </div>
+
   </div>
+</div>
 </body>
 </html>
-
