@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your CV</title>
+<title>Sergey Botsyun. Personal public CV QA ingeneer position. English version</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -58,6 +58,30 @@
   .experience {
     margin-top: 20px;
   }
+  .but{
+  background-color: #007BFF; /* Blue color */
+  color: #fff; /* White text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Hover effect */
+.but:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+.footer {
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  color: #858484;
+  text-align: center;
+}
   @media screen and (max-width: 600px) {
     .container {
       max-width: 100%; /* Full width for small screens */
@@ -84,7 +108,22 @@
       width: 50%;
       padding-left: 25%;
     }
+    .but{
+    background-color: #007BFF; /* Blue color */
+    color: #fff; /* White text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
   }
+
+  /* Hover effect */
+  .download-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
   @media screen and (max-width: 800px) {
     .container {
       max-width: 100%; /* Full width for small screens */
@@ -120,6 +159,7 @@
       <div class="column additional-info">
         <div class="personal-info-top">
           <h2>Botsyun Sergey</h2>
+
           <p>Email: sbotsyun@gmail.com</p>
           <p>Phone: +374 55 426 904</p>
           <p>Location: Dilijan, Armenia</p>
@@ -127,7 +167,9 @@
         <div class="photo">
           <img src="https://habrastorage.org/webt/-a/md/45/-amd45qkqyq5oola7oywzj5ukue.jpeg" alt="Your Photo">
         </div>
+        <div class="but" onclick="downloadFile()">Download Resume(.pdf)</div>
         <div class="skills">
+
           <h2>Skills</h2>
           <ul>
             <li>API Testing</li>
@@ -168,6 +210,8 @@
         <div class="details">
           <div class="personal-info">
             <h2>Botsyun Sergey</h2>
+
+
             <p>Email: sbotsyun@gmail.com</p>
             <p>Phone: +374 55 426 904</p>
             <p>Location: Dilijan, Armenia</p>
@@ -188,24 +232,33 @@
             <h2>Experience</h2>
             <h3>Software QA Test Engineer - Ingosstrakh Insurance company</h3>
             <p>08.2021 - This time</p>
-            <p>Main achievements:<br>
-  Project "maintenance a new codeless business system"
+            <p><b>Main achievements:</b><br>
+  <i>Project "maintenance a new codeless business system"</i><br>
   Took an active part in creating a full process of refactoring the old monolith gateway system and
   developing the new API. Was part of discussions about the Kanban board type, the best methods of
   communication between team members in Agile environment. Proved strong communication skills in
-  facilitating conflict solving in the team - among managers, BA and software developers;
-  Responsibilities:<br>
+  facilitating conflict solving in the team - among managers, BA and software developers;<br><br>
+  <b>Responsibilities:</b><br>
   - As the only QA engineer in the team, provided strong quality assurance from release to release;<br>
-  - Performed functional, exploratory, regression testing using different tools. Analyzed logs and DB
-  requests to improve the testing process.<br>
+  - Performed functional, exploratory, regression testing using different tools.<br>
+  - Analyzed logs and DB requests to improve the testing process.<br>
   - Was part of the internal project that created REST API for different internal and external systems
   within the company;<br>
   - Test design activities: creating test-plan, API testing collections (Postman, SoapUI), test-cases in TFS;<br>
   - python scripts and framework for test API and generate test data.<br><br>
-  Project "an appointment of personal managers"<br>
+  <i>Project "an appointment of personal managers"</i><br>
   - shift-left testing;<br>
   - take part of the "3 Amigo meetings for analyze and prepare user stories for developing and testing";<br>
-  - write tests for the following automation by developers</p>
+  - write tests for the following automation by developers
+  <br><br>
+  <b>Automation skills:</b><br>
+- Deploy Allure report system;<br>
+- Deploy and configure Playwright system(Java);<br>
+- Write automate tests for API and UI with Playwright;<br>
+- Parameterize and configure tests for JUnit (4 or 5) framework;<br>
+- Work with pytest and requests(Postman templates)<br>
+- check and improve automation frameworks and quality with AI tools (chatGPT, Co-pilot etc)<br>
+  </p>
           </div>
 
   	<div class="experience">
@@ -259,6 +312,7 @@
       </div>
       <div class="column additional-info">
         <div class="details">
+
               <div class="Articles">
                 <h2>Articles<br></h2>
                 <p>(in Russian)</p>
@@ -283,5 +337,21 @@
 
   </div>
 </div>
+<div class="footer">
+  <p>2023</p>
+</div>
+<script>
+    // JavaScript function to trigger the download
+    function downloadFile() {
+      // Replace 'your-file-url' with the actual file URL
+      var fileUrl = 'https://drive.google.com/file/d/1mTSU6RF56Z1D6kvb4gemUuw7DOzcX5ex/view?usp=sharing';
+      var a = document.createElement('a');
+      a.href = fileUrl;
+      a.download = 'file-name.extension'; // Specify the file name and extension
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
 </body>
 </html>
